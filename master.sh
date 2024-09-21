@@ -3,6 +3,7 @@
 show_help() {
     echo "Usage: $0 [option]"
     echo "Options:"
+    echo "  -A  -all          linux auditing"
     echo "  -U, --User_check   Check the user account"
     echo "  -M, --memory       Check memory information"
     echo "  -h, --help         Display this help message"
@@ -28,6 +29,11 @@ while [[ "$#" -gt 0 ]]; do
             show_help
             exit 0
             ;;
+
+        -A| -all)
+           ./User_account.sh
+           ./memory.sh
+           exit 0;;
         *)
             echo "Unknown option: $1"
             show_help
