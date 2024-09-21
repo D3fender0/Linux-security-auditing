@@ -10,8 +10,7 @@ show_help() {
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
         -U|--User_check)
-            if [[ -n "$2" ]]; then
-                ./user_account.sh "$2"  # Pass the user account as an argument if needed
+                ./user_account.sh  # Pass the user account as an argument if needed
                 exit 0
             else
                 echo "Error: --User_check requires an argument."
