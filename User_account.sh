@@ -1,15 +1,39 @@
 #!/bin/bash
 red='\e[1;31m'
 normal='\e[0m'
-echo "#########################################################################################################"
-echo -e "${red}check the user account......${normal}"
+   
+echo -e " ${red}╔════════════════════════════════════════╗ "
+echo "            LINUX SECURITY AUDITING TOOL            "
+echo -e " ╚════════════════════════════════════════╝${normal}"
+echo "###################################################################################"
 
-cut -d: -f1 /etc/passwd| sort > /tmp/passwd_usr 
-last | awk '{print$1}'| sort | uniq > /tmp/loggin_usr
-comm /tmp/passwd_usr /tmp/loggin_usr |uniq   2>/dev/null
+
+# List all users from /etc/passwd
+cut -d: -f1 /etc/passwd | sort > /tmp/passwd_usr
+
+# List all users who logged in from 'last' command
+last | awk '{print $1}' | sort | uniq > /tmp/loggin_usr
+
+# Compare the two lists
+comm -23 /tmp/passwd_usr /tmp/loggin_usr | uniq 2>/dev/null
+
 echo "----------------------------------------------------------------------------------------------------------"
 echo "Checking file permissions..."
-sensitive_files=("/etc/shadow" "/etc/passwd" "/etc/sudores" "/root" "/var/log/auth.log" "/etc/ssh/ssh_host_*_key" "/etc/gshadow" "/etc/hosts" "/etc/hostname" "/etc/crypttab" "/etc/fstab" )
+
+# List of sensitive files
+sensitive_files=(
+    "/etc/shadow" 
+    "/etc/passwd" 
+    "/etc/sudoers"   # Corrected the typo in "/etc/sudores" 
+    "/root" 
+    "/var/log/auth.log" 
+    "/etc/ssh/ssh_host_*_key" 
+    "/etc/gshadow" 
+    "/etc/hosts" 
+    "/etc/hostname" 
+    "/etc/crypttab" 
+    "/etc/fstab"
+)
 weak_permissions=("777" "666" "755" "644")
 permissions=()  # This will store all the permissions for each file
 
