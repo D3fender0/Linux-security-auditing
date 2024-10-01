@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Declare the file_system as an array with individual elements
-file_system=("/home" "/tmp" "/var")
+file_system=("/home" "/tmp" "/var/tmp" "var/lib" "var/log")
 
 # Check for symbolic links
 for dir in "${file_system[@]}"; do
