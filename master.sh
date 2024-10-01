@@ -7,6 +7,7 @@ show_help() {
     echo "  -U, --User_check   Check the user account"
     echo "  -M, --memory       Check memory information"
     echo "  -h, --help         Display this help message"
+    echo "  -F, --File_permisson Check the file permission
 }
  
 # Display help if no arguments are provided
@@ -30,9 +31,14 @@ while [[ "$#" -gt 0 ]]; do
             exit 0
             ;;
 
-        -A| -all)
+        -A| --all)
            ./User_account.sh
            ./memory.sh
+           ./File_permission.sh
+           exit 0;;
+
+        -F| --File_permission)
+           ./File_permission.sh
            exit 0;;
         *)
             echo "Unknown option: $1"
