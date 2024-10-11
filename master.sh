@@ -51,6 +51,7 @@ while [[ "$#" -gt 0 ]]; do
            exit 0;;
 
         -H| --hardware)
+            ./design.sh
            ./hardware.sh
            exit 0;;
 
