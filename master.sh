@@ -21,11 +21,14 @@ fi
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
         -U|--User_check)
-            ./User_account.sh  
+               ./design.sh
+            ./User_account.sh 
             shift  # Move to the next argument
             ;;
         -M|--memory)
+              ./design.sh
             ./memory.sh  
+            
             exit 0
             ;;
         -h|--help)
@@ -34,6 +37,7 @@ while [[ "$#" -gt 0 ]]; do
             ;;
 
         -A| --all)
+            ./design.sh
            ./User_account.sh
            ./memory.sh
            ./File_permission.sh
@@ -42,6 +46,7 @@ while [[ "$#" -gt 0 ]]; do
            exit 0;;
 
         -F| --File_permission)
+             ./design.sh
            ./File_permission.sh
            exit 0;;
 
@@ -50,6 +55,7 @@ while [[ "$#" -gt 0 ]]; do
            exit 0;;
 
         -S| --File_system)
+           ./design.sh
            ./File_system.sh
            exit 0;;
         *)
