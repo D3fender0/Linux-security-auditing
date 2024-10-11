@@ -9,6 +9,7 @@ show_help() {
     echo "  -h, --help         Display this help message"
     echo "  -F, --File_permisson Check the file permission"
     echo "  -S  --File_system    check the file system"
+    echo "  -H  --hardware      hardware information"
 }
  
 # Display help if no arguments are provided
@@ -41,6 +42,10 @@ while [[ "$#" -gt 0 ]]; do
 
         -F| --File_permission)
            ./File_permission.sh
+           exit 0;;
+
+        -H| --hardware)
+           ./hardware.sh
            exit 0;;
 
         -S| --File_system)
