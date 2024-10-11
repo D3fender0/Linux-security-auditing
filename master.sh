@@ -38,6 +38,7 @@ while [[ "$#" -gt 0 ]]; do
            ./memory.sh
            ./File_permission.sh
            ./File_system.sh
+           ./hardware.sh
            exit 0;;
 
         -F| --File_permission)
