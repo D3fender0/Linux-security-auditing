@@ -23,9 +23,7 @@ if [ -z $k ];then
         echo "No mounted directory found"
 
 fi
-# -----------------------------------------------------------------------------
-#The script you shared is designed to check for Logical Volume Manager (LVM) volume groups
-# Check if both vgdisplay and lsvg commands exist
+
 if [ -e /usr/sbin/vgdisplay ] && [ -e /usr/sbin/lsvg ]; then
     pre="YES"
 else
