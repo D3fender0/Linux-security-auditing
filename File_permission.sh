@@ -1,6 +1,8 @@
 #!/bin/bash
-echo "----------------------------------------------------------------------------------------------------------"
-echo "Checking file permissions..."
+yellow="\e[1;33m"
+normal="\e[0m"
+
+echo "${yellow}Checking file permissions.${normal}"
 
 # List of sensitive files
 sensitive_files=(
