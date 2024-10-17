@@ -1,8 +1,10 @@
 #!/bin/bash
-red='\e[1;31m'
-normal='\e[0m'
-   
 
+   
+yellow="\e[1;33m"
+normal="\e[0m"
+
+echo -e "${yellow} User account ${normal}"
 
 # List all users from /etc/passwd
 cut -d: -f1 /etc/passwd | sort > /tmp/passwd_usr
