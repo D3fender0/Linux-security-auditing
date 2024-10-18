@@ -29,8 +29,7 @@ while [[ "$#" -gt 0 ]]; do
         -M|--memory)
               ./design.sh
             ./memory.sh  
-            
-            exit 0
+            shift
             ;;
         -h|--help)
             show_help
@@ -50,22 +49,22 @@ while [[ "$#" -gt 0 ]]; do
         -F| --File_permission)
              ./design.sh
            ./File_permission.sh
-           exit 0;;
+           shift ;;
 
         -H| --hardware)
             ./design.sh
            ./hardware.sh
-           exit 0;;
+           shift ;;
 
         -S| --File_system)
            ./design.sh
            ./File_system.sh
-           exit 0;;
+           shift ;;
 
         -P| --process)
           ./design.sh
          ./process.sh
-         exit 0;;
+         shift ;;
         *)
             echo "Unknown option: $1"
             show_help
