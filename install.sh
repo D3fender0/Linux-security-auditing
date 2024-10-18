@@ -7,3 +7,4 @@ chmod +x File_system.sh
 chmod +x File_permission.sh
 chmod +x hardware.sh
 chmod +x design.sh
+chmod +x process.sh
