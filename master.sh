@@ -10,6 +10,7 @@ show_help() {
     echo "  -F, --File_permisson Check the file permission"
     echo "  -S  --File_system    check the file system"
     echo "  -H  --hardware      hardware information"
+    echo "  -P  --process       process information"
 }
  
 # Display help if no arguments are provided
@@ -43,6 +44,7 @@ while [[ "$#" -gt 0 ]]; do
            ./File_permission.sh
            ./File_system.sh
            ./hardware.sh
+           ./process.sh
            exit 0;;
 
         -F| --File_permission)
@@ -59,6 +61,10 @@ while [[ "$#" -gt 0 ]]; do
            ./design.sh
            ./File_system.sh
            exit 0;;
+
+        -P| --Process)
+         ./process.sh
+         exit 0;;
         *)
             echo "Unknown option: $1"
             show_help
