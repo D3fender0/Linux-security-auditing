@@ -3,7 +3,7 @@
 show_help() {
     echo "Usage: $0 [option]"
     echo "Options:"
-    echo "  -A  --all          linux auditing"
+    echo "  -A , --all          linux auditing"
     echo "  -U, --User_check   Check the user account"
     echo "  -M, --memory       Check memory information"
     echo "  -h, --help         Display this help message"
@@ -62,7 +62,8 @@ while [[ "$#" -gt 0 ]]; do
            ./File_system.sh
            exit 0;;
 
-        -P| --Process)
+        -P| --process)
+          ./design.sh
          ./process.sh
          exit 0;;
         *)
