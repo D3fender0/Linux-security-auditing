@@ -6,6 +6,6 @@ echo -e "${yellow} memory information${normal}"
 m_file="/proc/meminfo"
 find=$(cat $m_file)
 dis=$(echo "$find" |  head -n 5)
-
+echo "${dis}"
 
 
