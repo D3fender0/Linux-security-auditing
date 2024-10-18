@@ -1,6 +1,8 @@
 #!/bin/bash
 yellow="\e[1;33m"
 normal="\e[0m"
+echo -e "${yellow}Process Monitoring${normal}"
+
 echo "${yellow} Process Monitoring${normal}"
 zombie_process=$(ps -A -o pid,stat,comm | awk '{if ($2 ~ /Z|X/) print$1}')
 
