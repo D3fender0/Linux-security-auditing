@@ -7,11 +7,12 @@ normal="\e[0m"
 echo -e "${yellow} User account ${normal}"
 
 # List all users from /etc/passwd
-cut -d: -f1 /etc/passwd | sort > /tmp/passwd_usr
+user_account = $(cut -d: -f1 /etc/passwd | sort)
+echo "${user_account}"
 
 # List all users who logged in from 'last' command
-last | awk '{print $1}' | sort | uniq > /tmp/loggin_usr
+echo "Recently used"
+recently_used=$(last | awk '{print $1}' | sort | uniq | head -n 5) 
+echo "${recently_used}"
 
-# Compare the two lists
-comm -23 /tmp/passwd_usr /tmp/loggin_usr | uniq 2>/dev/null
 
