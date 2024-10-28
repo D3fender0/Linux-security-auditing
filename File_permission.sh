@@ -10,8 +10,6 @@ sensitive_files=(
     "/etc/passwd" 
     "/etc/sudoers"   # Corrected the typo in "/etc/sudores" 
     "/root" 
-    "/var/log/auth.log" 
-    "/etc/ssh/ssh_host_*_key" 
     "/etc/gshadow" 
     "/etc/hosts" 
     "/etc/hostname" 
