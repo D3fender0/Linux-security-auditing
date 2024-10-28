@@ -1,17 +1,79 @@
 #!/bin/bash
 
-# Define colors
+# Define color codes
 yellow="\e[1;33m"
 normal="\e[0m"
 
+# List of default system accounts to exclude
+default_accounts=(
+    "root"
+    "daemon"
+    "bin"
+    "sys"
+    "sync"
+    "games"
+    "man"
+    "lp"
+    "mail"
+    "news"
+    "uucp"
+    "proxy"
+    "www-data"
+    "backup"
+    "list"
+    "irc"
+    "_apt"
+    "nobody"
+    "systemd-network"
+    "mysql"
+    "tss"
+    "strongswan"
+    "systemd-timesync"
+    "redsocks"
+    "rwhod"
+    "iodine"
+    "messagebus"
+    "miredo"
+    "redis"
+    "usbmux"
+    "mosquitto"
+    "tcpdump"
+    "sshd"
+    "_rpc"
+    "dnsmasq"
+    "statd"
+    "avahi"
+    "stunnel4"
+    "Debian-snmp"
+    "_gvm"
+    "speech-dispatcher"
+    "sslh"
+    "postgres"
+    "pulse"
+    "saned"
+    "inetsim"
+    "lightdm"
+    "geoclue"
+    "king-phisher"
+    "polkitd"
+    "nm-openvpn"
+    "rtkit"
+    "colord"
+    "nm-openconnect"
+    "_gophish"
+)
+
+# Convert default_accounts array to a pattern for grep
+exclude_pattern=$(printf "|^%s$" "${default_accounts[@]}")
+exclude_pattern=${exclude_pattern:1}  # Remove leading '|'
+
 # Print header
-echo -e "${yellow}User account${normal}"
+echo -e "${yellow}User Accounts${normal}"
 
-# List all users from /etc/passwd
-user_account=$(cut -d: -f1 /etc/passwd | sort)
-echo "${user_account}"
+# List all users from /etc/passwd, excluding default accounts
+user_accounts=$(cut -d: -f1 /etc/passwd | grep -Ev "$exclude_pattern" | sort)
 
-# List all users who logged in from 'last' command
-echo "Recently used"
-recently_used=$(last | awk '{print $1}' | sort | uniq | head -n 5)
-echo "${recently_used}"
+# Print the list of users
+for user in $user_accounts; do
+    echo "$user"
+done
