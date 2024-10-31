@@ -11,6 +11,7 @@ show_help() {
     echo "  -S  --File_system    check the file system"
     echo "  -H  --hardware      hardware information"
     echo "  -P  --process       process information"
+    echo "  s   --Service       running services"
 }
  
 # Display help if no arguments are provided
@@ -44,6 +45,7 @@ while [[ "$#" -gt 0 ]]; do
            ./File_system.sh
            ./hardware.sh
            ./process.sh
+           ./service.sh
            exit 0;;
 
         -F| --File_permission)
@@ -54,6 +56,10 @@ while [[ "$#" -gt 0 ]]; do
         -H| --hardware)
             ./design.sh
            ./hardware.sh
+           shift ;;
+        -s|--service)
+           ./design.sh
+           ./service.sh
            shift ;;
 
         -S| --File_system)
