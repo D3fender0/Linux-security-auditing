@@ -12,6 +12,7 @@ show_help() {
     echo "  -H  --hardware      hardware information"
     echo "  -P  --process       process information"
     echo "  s   --Service       running services"
+    echo "  K   --kernel       Kernal informayion"
 }
  
 # Display help if no arguments are provided
@@ -46,6 +47,7 @@ while [[ "$#" -gt 0 ]]; do
            ./hardware.sh
            ./process.sh
            ./service.sh
+           ./kernel.sh
            exit 0;;
 
         -F| --File_permission)
@@ -61,6 +63,11 @@ while [[ "$#" -gt 0 ]]; do
            ./design.sh
            ./service.sh
            shift ;;
+
+        -K|--kernel)
+         ./kernel.sh
+         ./design.sh
+         shift ;;
 
         -S| --File_system)
            ./design.sh
