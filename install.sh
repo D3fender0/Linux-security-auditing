@@ -10,3 +10,6 @@ chmod +x design.sh
 chmod +x process.sh
 chmod +x service.sh
 chmod +x kernel.sh
+chmod +x software.sh
+chmod +x systemd.sh
+chmod +x ssh.sh
