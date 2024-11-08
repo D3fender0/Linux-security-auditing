@@ -85,7 +85,7 @@ while [[ "$#" -gt 0 ]]; do
          ./design.sh
          shift ;;
 
-         -h| --ssh
+         -h| --ssh)
          ./ssh.sh
          ./desgin.sh
          shift ;;
