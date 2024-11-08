@@ -3,7 +3,7 @@
 yellow="\e[1;33m"
 normal="\e[0m"
 
-echo -e "${yellow}system service${normal}"
+echo -e "${yellow}system performance${normal}"
 
 # 1. CPU Usage
 echo "1. Checking CPU Usage"
