@@ -4,7 +4,7 @@ yellow="\e[1;33m"
 normal="\e[0m"
 
 
-echo "${yellow} software${normal}"
+echo -e "${yellow} software${normal}"
 # Create the output file in /tmp directory
 OUTPUT_FILE="/tmp/package-list.txt"
 
