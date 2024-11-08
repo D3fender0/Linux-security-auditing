@@ -12,7 +12,10 @@ show_help() {
     echo "  -H  --hardware      hardware information"
     echo "  -P  --process       process information"
     echo "  s   --Service       running services"
-    echo "  K   --kernel       Kernal informayion"
+    echo "  K   --kernel       Kernel informayion"
+    echo " SS  --software      software information"
+    echo " Sm  --systemd       systemd "
+    echo " h   --ssh           ssh configuration"
 }
  
 # Display help if no arguments are provided
@@ -48,6 +51,9 @@ while [[ "$#" -gt 0 ]]; do
            ./process.sh
            ./service.sh
            ./kernel.sh
+           ./systemd.sh
+           ./ssh.sh
+           ./software.sh
            exit 0;;
 
         -F| --File_permission)
@@ -59,14 +65,29 @@ while [[ "$#" -gt 0 ]]; do
             ./design.sh
            ./hardware.sh
            shift ;;
-        -s|--service)
+        -s| --service)
            ./design.sh
            ./service.sh
            shift ;;
 
-        -K|--kernel)
+        -K| --kernel)
          ./kernel.sh
          ./design.sh
+         shift ;;
+
+         -SS| --software)
+         ./software.sh
+         ./design.sh
+         shift ;;
+
+         --Sm| --systemd)
+         ./systemd.sh
+         ./design.sh
+         shift ;;
+
+         -h| --ssh
+         ./ssh.sh
+         ./desgin.sh
          shift ;;
 
         -S| --File_system)
