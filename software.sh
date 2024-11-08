@@ -1,10 +1,10 @@
-
 #!/bin/bash
 
-echo "Package Management Script"
-echo "--------------------------"
-echo
+yellow="\e[1;33m"
+normal="\e[0m"
 
+
+echo "${yellow} software${normal}"
 # Create the output file in /tmp directory
 OUTPUT_FILE="/tmp/package-list.txt"
 
@@ -24,5 +24,4 @@ echo "--------------------------------------" >> "$OUTPUT_FILE"
 echo >> "$OUTPUT_FILE"
 
 echo "Output has been written to $OUTPUT_FILE"
-
 
