@@ -20,5 +20,5 @@ services=(
 )
 
 # Display running services and filter by important services
-echo  -e "{yellow}Auditing important running services:{normal}"
+echo  -e "${yellow}Auditing important running services:${normal}"
 systemctl list-units --type=service --state=running | grep -E "$(IFS=\|; echo "${services[*]}")"
