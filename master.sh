@@ -15,7 +15,7 @@ show_help() {
     echo "  K   --kernel       Kernel informayion"
     echo " SS  --software      software information"
     echo " Sm  --systemd       systemd "
-    echo " h   --ssh           ssh configuration"
+    echo " n   --ssh           ssh configuration"
 }
  
 # Display help if no arguments are provided
@@ -85,7 +85,7 @@ while [[ "$#" -gt 0 ]]; do
          ./design.sh
          shift ;;
 
-         -h| --ssh)
+         -n| --ssh)
          ./ssh.sh
          ./desgin.sh
          shift ;;
