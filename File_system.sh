@@ -1,7 +1,7 @@
 #!/bin/bash
 yellow="\e[1;33m"
 normal="\e[0m"
-echo -e "${yellow}checking file permission${normal}"
+echo -e "${yellow}checking file system${normal}"
 # Declare the file_system as an array with individual elements
 file_system=("/home" "/tmp" "/var/tmp" "var/lib" "var/log")
 
