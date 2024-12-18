@@ -11,11 +11,11 @@ show_help() {
     echo "  -S  --File_system    check the file system"
     echo "  -H  --hardware      hardware information"
     echo "  -P  --process       process information"
-    echo "  s   --Service       running services"
-    echo "  K   --kernel       Kernel informayion"
-    echo " SS  --software      software information"
-    echo " Sm  --systemd       systemd "
-    echo " n   --ssh           ssh configuration"
+    echo "  -s   --Service       running services"
+    echo "  -K   --kernel       Kernel informayion"
+    echo " -SS  --software      software information"
+    echo " -Sm  --systemd       systemd "
+    echo " -n   --ssh           ssh configuration"
 }
  
 # Display help if no arguments are provided
